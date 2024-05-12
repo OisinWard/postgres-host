@@ -1,10 +1,3 @@
-# Have script to pull down all the repos I want
+# Shell command needs to be skipped on re-run
 
-# Add scripts to handle ssh config
-
-# Alias composer and php in bashrc
-
-```
-alias composer='docker container exec laravel composer "$@"'
-alias php='docker exec laravel php "$@"'
-```
+# Perform full test run
