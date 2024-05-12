@@ -4,3 +4,11 @@
     name: postgresql-server
     state: present
 
+- name: Run postgresql setup
+  shell: postgresql-setup --initdb
+
+- name: Enabling and starting postgresql services
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
