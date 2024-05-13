@@ -5,7 +5,10 @@
     state: present
 
 - name: Run postgresql setup
-  shell: postgresql-setup --initdb
+  shell: 
+    cmd: postgresql-setup --initdb
+    creates: /var/lib/pgsql/data/postgresql.conf
+
 
 - name: Enabling and starting postgresql services
   service:
