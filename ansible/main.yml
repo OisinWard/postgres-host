@@ -1,6 +1,8 @@
 ---
 - name: Install postgresql
   hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   become: true
   roles: 
     - role: postgres_install
