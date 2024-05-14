@@ -5,5 +5,7 @@
     ansible_python_interpreter: /usr/bin/python3
   become: true
   roles: 
+    - role: python_install
+      tags: python_install
     - role: postgres_install
       tags: postgres_install

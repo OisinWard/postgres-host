@@ -21,4 +21,5 @@
   become_user: postgres
   postgresql_user:
     name: "{{ ansible_ssh_user }}"
+    role_attr_flags: SUPERUSER
     state: present
