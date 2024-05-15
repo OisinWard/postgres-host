@@ -21,3 +21,6 @@ rm-hard: rm
 rebuild-hard: rm-hard up
 
 restart: stop up
+
+psql: 
+	ssh -t postgres-host psql
