@@ -1,0 +1,11 @@
+---
+- name: Template sql file for seven databases book
+  template:
+    src: seven_databases_setup_chpt2.sql.j2
+    dest: /home/{{ ansible_ssh_user }}/seven_databases_setup_chpt2.sql
+    mode: '0644'
+
+- name: Run sql file
+  become: true
+  become_user: "{{ ansible_ssh_user }}"
+  command: psql -U {{ ansible_ssh_user }} -f /home/{{ ansible_ssh_user }}/seven_databases_setup_chpt2.sql

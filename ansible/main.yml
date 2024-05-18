@@ -9,3 +9,5 @@
       tags: python_install
     - role: postgres_install
       tags: postgres_install
+    - role: seven_databases_book
+      tags: seven_databases_book
