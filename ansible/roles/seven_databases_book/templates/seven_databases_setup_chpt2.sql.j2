@@ -46,3 +46,11 @@ INSERT INTO venues (name, postal_code, country_code)
 VALUES ('Voodoo Doughnut', '97206', 'us') RETURNING venue_id;
 
 
+CREATE TABLE events (
+    venue_id SERIAL PRIMARY KEY,
+    title varchar(255),
+    starts timestamp,
+    ends timestamp,
+    FOREIGN KEY (venue_id)
+    REFERENCES venues (venue_id) MATCH FULL
+);
