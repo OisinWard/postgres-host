@@ -1,3 +1,4 @@
+drop table events;
 drop table venues;
 drop table cities;
 drop table countries;
@@ -20,11 +21,6 @@ postal_code varchar(9) CHECK (postal_code <> ''),
 country_code char(2) REFERENCES countries,
 PRIMARY KEY (country_code, postal_code)
 );
-
--- Update causes duplicates on re-run so deleting out row
-delete from events where venue_id = 2;
-delete from venues where postal_code = '97206';
-DELETE FROM cities where postal_code = '97206';
 
 INSERT INTO cities
 VALUES ('Portland','87200','us');
