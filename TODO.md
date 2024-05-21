@@ -7,5 +7,13 @@ Also run through the examples.
 # Starting to look at pg_class
 
 ```
-select * from pg_class where relname = 'cities' limit 1 \gx
+select * from pg_class 
+where relname in
+(
+'events',
+'venues',
+'cities',
+'countries'
+)
+\gx
 ```
