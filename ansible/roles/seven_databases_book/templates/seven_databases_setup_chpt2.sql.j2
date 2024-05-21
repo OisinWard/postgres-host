@@ -63,3 +63,9 @@ values ('Fight Club', '2018-02-15 17:30:00', '2018-02-15 19:30:00', 2),
 
 CREATE INDEX events_title
 ON events USING hash (title);
+
+
+CREATE INDEX events_starts
+ON events USING btree (starts);
+
+alter table venues add active boolean default true;
