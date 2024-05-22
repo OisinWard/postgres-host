@@ -69,3 +69,13 @@ CREATE INDEX events_starts
 ON events USING btree (starts);
 
 alter table venues add active boolean default true;
+
+INSERT INTO events (title, starts, ends, venue_id)
+VALUES ('Moby', '2018-02-06 21:00', '2018-02-06 23:00', (
+SELECT venue_id
+FROM venues
+WHERE name = 'Crystal Ballroom'
+)
+);
+
+
