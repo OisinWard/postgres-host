@@ -81,3 +81,14 @@ WHERE name = 'Crystal Ballroom'
 insert into countries values ('ie', 'Ireland');
 insert into cities values ('Cavan', '12345', 'ie');
 insert into venues (name, street_address, type, postal_code, country_code) values ('My Place', 'Fake street', 'public', '12345', 'ie');
+
+INSERT INTO events (title, starts, ends, venue_id)
+values ('Fight Club', '2018-02-15 17:30:00', '2018-02-15 19:30:00', ),
+('April Fools Day', '2018-04-01 00:00:00', '2018-04-01 23:59:00', NULL),
+('Christmas Day', '2018-12-15 19:30:00', '2018-12-25 23:59:00', NULL);
+
+
+INSERT INTO events (title, starts, ends, venue_id) values
+('Wedding', '2018-02-26 21:00:00', '2018-02-26 23:00:00', ( select venue_id from venues where name = 'Voodoo Doughnut' )),
+('Dinner with Mom', '2018-02-26 18:00:00', '2018-02-26 20:30:00', ( select venue_id from venues where name = 'My Place' )),
+('Valentine''s Day', '2018-02-14 00:00:00', '2018-02-14 23:59:00', NULL);
